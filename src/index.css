@@ -1,13 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+  background: #f6f6f6;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 2000px;
+  margin: 0 30px;
 }
+
+/* USER NAVBAR */
+.navbar {
+  box-shadow: 0px 2px 8px 2px rgba(145,145,145,0.47);
+  padding: 10px;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Poppins' ;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:active {
+  text-shadow: 0 0 1.5px rgba(145,145,145);
+}
+
+.categoriesNavBar a {
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+
+#user-signup {
+  width: 40px;
+  height: 40px;
+  background: url("./assets/person_outline_black_36dp.svg") center no-repeat;
+  border: none;
+  margin-right: 20px;
+}
+
+.user-login-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-login-options button {
+  width: 200px;
+}
+
+#shopping-cart {
+  width: 40px;
+  height: 40px;
+  background: url("./assets/shopping_cart_black_24dp.svg") center no-repeat;
+  border: none;
+  margin-right: 20px;
+}
+
+/* PRODUCTS NAVBAR */
+.CategoriesNavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ }
+
+th {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+td {
+  padding: 10px;
+}
+
+/* LOG IN FORM - SIGN UP FORM */
+.login-container {
+  margin: 0 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.login-form{
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  margin: 30px 0;
+}
+
+#email-login-validation, #password-login-validation {
+  width: 100%;
+  font-family: 'poppins';
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.login-form sa {
+  color: #9353bd;
+  text-decoration: none;
+}
+
+.password-container a:active {
+  text-shadow: .5px 0px .5px;
+}
+
+.login-form Button {
+  width: 100%;
+  font-family: 'poppins';
+  font-size: 15px;
+  margin: 10px 0 25px 0;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.signup-first-and-last-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up span {
+  padding-right: 5px;
+}
+

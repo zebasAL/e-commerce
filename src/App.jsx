@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import LogInForm from './containers/LogInForm';
+import HomePage from './containers/HomePage';
+import NavBar from './containers/NavBar';
 import './App.css';
+import SignUpForm from './containers/SignUpForm';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        hola
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+  <Router>
+    <div className="App">
+      <nav className="navbar">
+        <NavBar />
+      </nav>
+
+      <main className="container">
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/login">
+            <LogInForm />
+          </Route>
+          <Route path="/signup">
+            <SignUpForm />
+          </Route>
+        </Switch>
+      </main>
+    </div>
+  </Router>
 );
 
 export default App;

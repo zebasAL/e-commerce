@@ -20,5 +20,6 @@
         "jest"
     ],
     "rules": {
+        "linebreak-style": "off"
     }
 }
