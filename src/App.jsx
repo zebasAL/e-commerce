@@ -4,11 +4,11 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import LogInForm from './containers/LogInForm';
+import LogInForm from './containers/users/LogInForm';
 import HomePage from './containers/HomePage';
-import NavBar from './containers/NavBar';
+import NavBar from './components/ui/NavBar';
 import './App.css';
-import SignUpForm from './containers/SignUpForm';
+import SignUpForm from './containers/users/SignUpForm';
 
 const App = () => (
   <Router>
