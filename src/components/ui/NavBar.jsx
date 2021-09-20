@@ -5,6 +5,7 @@ import {
   Link,
 } from 'react-router-dom';
 import NavbarUserBtns from './NavbarUserBtns';
+import NavbarUserLogedBtns from './NavbarUserLogedBtns';
 import NavbarLogo from './NavBarLogo';
 
 const NavBar = () => {
@@ -54,7 +55,11 @@ const NavBar = () => {
           )
         }
       </div>
-      <NavbarUserBtns />
+      {
+      !localStorage.getItem('token') === true
+        ? <NavbarUserBtns />
+        : <NavbarUserLogedBtns />
+      }
     </>
   );
 };

@@ -1,19 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import {
+  Link,
+} from 'react-router-dom';
+import {
+  Button,
+} from 'evergreen-ui/';
 
-const NavbarLogo = () => {
-  const history = useHistory();
-
-  const routeChange = () => {
-    const path = '/';
-    history.push(path);
-  };
-
-  return (
-    <>
-      <a href="#!" onClick={routeChange} className="logo">E-commerce</a>
-    </>
-  );
-};
+const NavbarLogo = () => (
+  <>
+    <Button is={Link} to="/" className="logo">E-commerce</Button>
+  </>
+);
 
 export default NavbarLogo;

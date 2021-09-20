@@ -1,24 +1,60 @@
-import React, { useState } from 'react';
-import { TextInputField, Button, Link } from 'evergreen-ui/';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import {
+  TextInputField, Button, Link, toaster,
+} from 'evergreen-ui/';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import user from './templates';
 
 const LogInForm = () => {
   const [userValue, setUserValue] = useState({ ...user });
+  const [isLoading, setIsLoading] = useState(false);
+  const [users, setUsers] = useState([]);
+  const history = useHistory();
 
-  // const authentication = () => {
-  //   axios.post('https://fakestoreapi.com/auth/login')
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     })
-  //     .catch(() => {
-  //       toaster.danger('Something went wrong...');
-  //     });
-  // };
+  const getUsers = () => {
+    axios.get('https://fakestoreapi.com/users')
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch(() => {
+        toaster.notify('unknown error');
+      });
+  };
+
+  const handleAuthentication = () => {
+    setIsLoading(true);
+    axios.post('https://fakestoreapi.com/auth/login', {
+      username: userValue.username,
+      password: userValue.password,
+    })
+      .then((res) => {
+        toaster.success('you logged in');
+
+        if (users.length) {
+          const [retrievedUser] = users.filter((item) => item.username === userValue.username);
+          localStorage.setItem('id', retrievedUser.id);
+        }
+
+        setIsLoading(false);
+        localStorage.setItem('token', res.data.token);
+        history.push('/');
+      })
+      .catch(() => {
+        toaster.notify('we could not find that user');
+        setIsLoading(false);
+      });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    handleAuthentication();
   };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <div className="login-container">
@@ -26,16 +62,16 @@ const LogInForm = () => {
         <h2>Sign in to</h2>
 
         <TextInputField
-          label="Email"
+          label="User Name"
           required
-          value={userValue.email}
+          value={userValue.username}
           onChange={(e) => setUserValue((prevstate) => ({
             ...prevstate,
-            email: e.target.value,
+            username: e.target.value,
           }))}
-          id="email-login-validation"
+          id="username-login-validation"
           className="user-validation"
-          type="email"
+          type="text"
         />
 
         <TextInputField
@@ -48,10 +84,10 @@ const LogInForm = () => {
           }))}
           id="password-login-validation"
           className="user-validation"
-          type="text"
+          type="password"
         />
 
-        <Button type="submit" marginRight={12} size="medium" appearance="primary">Sign In</Button>
+        <Button isLoading={isLoading} type="submit" marginRight={12} size="medium" appearance="primary">Sign In</Button>
 
         <div className="sign-up">
           <span>Not a member?</span>
