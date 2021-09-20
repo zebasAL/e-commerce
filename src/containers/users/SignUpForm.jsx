@@ -38,6 +38,21 @@ const SignUpForm = () => {
         <h2>Sign up now</h2>
 
         <TextInputField
+          label="User Name"
+          required
+          value={initialValue.username}
+          onChange={(e) => {
+            setInitialValue((prevState) => ({
+              ...prevState,
+              username: e.target.value,
+            }));
+          }}
+          id="username-signup-validation"
+          className="user-validation"
+          type="text"
+        />
+
+        <TextInputField
           label="Email"
           required
           value={initialValue.email}
@@ -50,21 +65,6 @@ const SignUpForm = () => {
           id="email-signup-validation"
           className="user-validation"
           type="email"
-        />
-
-        <TextInputField
-          label="User Name"
-          required
-          value={initialValue.username}
-          onChange={(e) => {
-            setInitialValue((prevState) => ({
-              ...prevState,
-              username: e.target.value,
-            }));
-          }}
-          id="user-name-signup-validation"
-          className="user-validation"
-          type="text"
         />
 
         <TextInputField

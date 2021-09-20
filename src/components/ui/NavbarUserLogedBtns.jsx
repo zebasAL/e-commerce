@@ -4,7 +4,7 @@ import {
 } from 'evergreen-ui/';
 import { Link } from 'react-router-dom';
 
-const NavbarUserBtns = () => (
+const NavbarUserLogedBtns = () => (
   <div>
     <Popover
       content={() => (
@@ -12,8 +12,8 @@ const NavbarUserBtns = () => (
           paddingX={0}
         >
           <div className="user-login-options">
-            <Button is={Link} to="/login">Sign In</Button>
-            <Button is={Link} to="/signup">Create an account</Button>
+            <Button is={Link} to="/myaccount">My Account</Button>
+            <Button is={Link}>Log out</Button>
           </div>
         </Pane>
       )}
@@ -24,4 +24,4 @@ const NavbarUserBtns = () => (
   </div>
 );
 
-export default NavbarUserBtns;
+export default NavbarUserLogedBtns;

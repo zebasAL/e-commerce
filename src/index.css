@@ -31,12 +31,12 @@ body {
 }
 
 .logo {
-  font-family: 'Poppins' ;
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 20px;
-  text-decoration: none;
-  color: inherit;
+  font-family: 'Poppins' !important;
+  border: 0 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-left: 20px ;
+  color: black !important;
 }
 
 .logo:active {
