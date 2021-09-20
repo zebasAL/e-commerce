@@ -4,8 +4,8 @@ import axios from 'axios';
 import {
   Link,
 } from 'react-router-dom';
-import NavbarUserBtns from '../components/ui/NavbarUserBtns';
-import NavbarLogo from '../components/ui/NavBarLogo';
+import NavbarUserBtns from './NavbarUserBtns';
+import NavbarLogo from './NavBarLogo';
 
 const NavBar = () => {
   const [categories, setCategories] = useState([]);
