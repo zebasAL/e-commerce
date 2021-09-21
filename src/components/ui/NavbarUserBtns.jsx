@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Popover, Pane, Button,
+  Popover, Pane, Button, UserIcon, Icon, ShoppingCartIcon,
 } from 'evergreen-ui/';
 import { Link } from 'react-router-dom';
 
@@ -18,9 +18,13 @@ const NavbarUserBtns = () => (
         </Pane>
       )}
     >
-      <Button id="user-signup" />
+      <Button id="user-login-btn">
+        <Icon id="user-login-label" icon={UserIcon} size={25} />
+      </Button>
     </Popover>
-    <Button id="shopping-cart" />
+    <Button id="shopping-cart-btn">
+      <Icon id="shopping-cart-label" icon={ShoppingCartIcon} size={25} />
+    </Button>
   </div>
 );
 

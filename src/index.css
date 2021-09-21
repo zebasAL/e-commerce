@@ -43,15 +43,19 @@ body {
   text-shadow: 0 0 1.5px rgba(145,145,145);
 }
 
+.mobile-menu {
+  display: contents;
+}
+
 .categoriesNavBar a {
   text-transform: uppercase;
   margin: 0 5px;
 }
 
-#user-signup {
+/* login and cart button */
+#shopping-cart-btn, #user-login-btn {
   width: 40px;
   height: 40px;
-  background: url("./assets/person_outline_black_36dp.svg") center no-repeat;
   border: none;
   margin-right: 20px;
 }
@@ -62,25 +66,14 @@ body {
 }
 
 .user-login-options button {
-  width: 200px;
+  width: 100px;
 }
 
-#shopping-cart {
-  width: 40px;
-  height: 40px;
-  background: url("./assets/shopping_cart_black_24dp.svg") center no-repeat;
-  border: none;
-  margin-right: 20px;
+.aside-navbar {
+  display: none;
 }
 
-/* PRODUCTS NAVBAR */
-.CategoriesNavBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
- }
-
+/* table */
 th {
   padding: 10px;
   padding-bottom: 0;
