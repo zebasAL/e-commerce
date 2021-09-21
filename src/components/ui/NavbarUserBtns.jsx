@@ -12,7 +12,7 @@ const NavbarUserBtns = () => (
           paddingX={0}
         >
           <div className="user-login-options">
-            <Button is={Link} to="/login">Sign In</Button>
+            <Button is={Link} id="login-btn" to="/login">Sign In</Button>
             <Button is={Link} to="/signup">Create an account</Button>
           </div>
         </Pane>

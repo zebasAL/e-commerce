@@ -54,5 +54,8 @@ jobs:
       - name: Install dependencies
         run: npm install 
         
-      - name: Test
+      - name: Run unit tests
         run: CI=true npm test
+
+      - name: Run integrations tests
+        run: npm run cypress run
