@@ -57,5 +57,6 @@ jobs:
       - name: Run unit tests
         run: CI=true npm test
 
-      - name: Run integrations tests
-        run: npm run cypress run
+      - name: Run integration tests
+          # start the server in the background
+        run: npm run start:ci & npx cypress run
