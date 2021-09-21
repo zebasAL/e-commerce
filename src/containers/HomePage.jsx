@@ -1,9 +1,10 @@
 import React from 'react';
+import HomePageHeader from '../components/ui/HomePageHeader';
 
 const HomePage = () => (
-  <div>
-    EXAMPLE
-  </div>
+  <>
+    <HomePageHeader />
+  </>
 );
 
 export default HomePage;
