@@ -6,7 +6,7 @@ describe('Login spec', () => {
     cy.visit('http://localhost:3000/');
 
     // go  to sign in page
-    cy.get('#user-signup').click();
+    cy.get('#user-login-btn').click();
     cy.get('#login-btn').click();
 
     // fill in form

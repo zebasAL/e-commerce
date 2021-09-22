@@ -1,0 +1,43 @@
+@media only screen and (max-width: 950px) {
+
+  .hide-navbar-mobile {
+    display: none;
+  }
+
+  .aside-navbar {
+    display: block;
+  }
+
+  .aside-navbar-header  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .categoriesNavBar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #user-login-btn, #shopping-cart-btn {
+    width: 100%;
+    margin: 4px 0;
+    display: flex;
+    align-items: end;
+  }
+
+  /* #user-login-btn svg, #shopping-cart-btn svg {
+    font-size: 5px;
+   } */
+
+  #user-login-label::after {
+    content: 'ACCOUNT';
+    padding-left: 10px;
+  }
+
+  #shopping-cart-label::after {
+    content: 'CART';
+    padding-left: 10px;
+  }
+
+};
