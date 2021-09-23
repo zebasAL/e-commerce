@@ -13,7 +13,7 @@ const NavbarUserLogedBtns = () => (
         >
           <div className="user-login-options">
             <Button is={Link} to="/myaccount">My Account</Button>
-            <Button is={Link}>Log out</Button>
+            <Button is={Link} to="/">Log out</Button>
           </div>
         </Pane>
       )}

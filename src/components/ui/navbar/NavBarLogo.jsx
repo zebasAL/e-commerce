@@ -8,7 +8,7 @@ import {
 
 const NavbarLogo = () => (
   <>
-    <Button is={Link} to="/" className="logo">E-commerce</Button>
+    <Button id="navbar-logo" is={Link} to="/" className="logo">E-commerce</Button>
   </>
 );
 

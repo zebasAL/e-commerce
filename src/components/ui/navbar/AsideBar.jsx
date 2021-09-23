@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   SideSheet, Pane, Heading, Tablist, Button, Icon, MenuIcon,
 } from 'evergreen-ui';
-import NavBarCategories from './NavBarCategories';
+import NavBarCategoriesBtns from './NavBarCategoriesBtns';
 import LoginAndCartBtns from './LoginAndCartBtns';
 
-function AsideBar() {
-  const [isShown, setIsShown] = React.useState(false);
+function AsideBar({ categoryValues }) {
+  const [isShown, setIsShown] = useState(false);
+
   return (
     <div className="aside-navbar">
       <SideSheet
@@ -26,7 +28,7 @@ function AsideBar() {
           </Pane>
           <Tablist display="flex" flexDirection="column" flex="1" padding={8}>
             <LoginAndCartBtns display="flex" flexDirection="column" />
-            <NavBarCategories display="flex" flexDirection="column" flex="1" />
+            <NavBarCategoriesBtns categoryValues={categoryValues} display="flex" flexDirection="column" flex="1" />
           </Tablist>
         </Pane>
       </SideSheet>
@@ -36,5 +38,9 @@ function AsideBar() {
     </div>
   );
 }
+
+AsideBar.propTypes = {
+  categoryValues: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default AsideBar;
