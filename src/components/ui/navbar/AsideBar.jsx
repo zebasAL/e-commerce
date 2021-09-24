@@ -32,7 +32,7 @@ function AsideBar({ categoryValues }) {
           </Tablist>
         </Pane>
       </SideSheet>
-      <Button border="none" height={30} onClick={() => setIsShown(true)}>
+      <Button data-cy="aside-navbar" border="none" height={30} onClick={() => setIsShown(true)}>
         <Icon icon={MenuIcon} size={20} />
       </Button>
     </div>
