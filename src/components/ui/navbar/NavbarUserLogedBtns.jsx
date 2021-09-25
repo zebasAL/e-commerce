@@ -13,16 +13,16 @@ const NavbarUserLogedBtns = () => (
         >
           <div className="user-login-options">
             <Button is={Link} to="/myaccount">My Account</Button>
-            <Button is={Link}>Log out</Button>
+            <Button is={Link} to="/">Log out</Button>
           </div>
         </Pane>
       )}
     >
-      <Button id="user-login-btn">
+      <Button id="user-myaccount-btn">
         <Icon id="user-login-label" icon={UserIcon} size={25} />
       </Button>
     </Popover>
-    <Button id="shopping-cart-btn">
+    <Button id="logout-btn">
       <Icon id="shopping-cart-label" icon={ShoppingCartIcon} padding={0} size={25} />
     </Button>
   </div>
