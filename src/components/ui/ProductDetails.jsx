@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'evergreen-ui';
-import QuantityBtn from './QunatityBtn';
+import QuantityBtn from './QuantityBtn';
 import CollapseBtns from './CollapseBtns';
 
 const ProductDetails = ({
