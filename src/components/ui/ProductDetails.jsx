@@ -35,11 +35,11 @@ const ProductDetails = ({
   return (
     <div className="product-view-container">
       <div className="product-img-wrapper">
-        <img alt="product-img" src={productvalues.image} />
+        <img data-cy="product-image" alt="product-img" src={productvalues.image} />
       </div>
       <div className="product-info-container">
-        <h2 className="product-info-title">{productvalues.title}</h2>
-        <p className="product-info-price">
+        <h2 data-cy="product-info-title" className="product-info-title">{productvalues.title}</h2>
+        <p data-cy="product-info-price" className="product-info-price">
           {`$${productvalues.price} USD`}
         </p>
         <form onSubmit={handleSubmit}>
@@ -56,7 +56,7 @@ const ProductDetails = ({
             <Button appearance="primary" id="buy-product-btn">Buy it now</Button>
           </div>
         </form>
-        <p className="product-info-description">{productvalues.description}</p>
+        <p data-cy="product-info-description" className="product-info-description">{productvalues.description}</p>
         <CollapseBtns productDetails={productvalues} />
       </div>
     </div>
@@ -65,7 +65,6 @@ const ProductDetails = ({
 
 ProductDetails.propTypes = {
   productvalues: PropTypes.shape({
-    id: PropTypes.number,
     title: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
