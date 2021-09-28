@@ -9,7 +9,7 @@ const QuantityBtn = ({
   validateNewQuantity,
 }) => (
   <div className="quantity-btn">
-    <Button onClick={validateSubtraction} borderRadius="0" borderRight="none">-</Button>
+    <Button data-cy="substract-quantity-btn" onClick={validateSubtraction} borderRadius="0" borderRight="none">-</Button>
     <TextInput
       id="quantity-btn"
       type="number"
@@ -24,7 +24,7 @@ const QuantityBtn = ({
       alignContent="center"
       paddingX={5}
     />
-    <Button onClick={validateSum} borderRadius="0" borderLeft="none">+</Button>
+    <Button data-cy="sum-quantity-btn" onClick={validateSum} borderRadius="0" borderLeft="none">+</Button>
   </div>
 );
 

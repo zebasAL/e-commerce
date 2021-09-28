@@ -11,7 +11,7 @@ const ProductDetails = ({
   const onlyPositive = /[1-9]\d?/;
 
   const validateNewQuantity = (prev) => {
-    if (onlyPositive.test(prev.target.value)) {
+    if (onlyPositive.test(prev.target.value) || prev.target.value === '') {
       setProductQuntity(prev.target.value);
     }
   };
@@ -34,30 +34,34 @@ const ProductDetails = ({
 
   return (
     <div className="product-view-container">
-      <div className="product-img-wrapper">
-        <img data-cy="product-image" alt="product-img" src={productvalues.image} />
+      <div className="product-img-container">
+        <div className="product-img-wrapper">
+          <img data-cy="product-image" alt="product-img" src={productvalues.image} />
+        </div>
       </div>
       <div className="product-info-container">
-        <h2 data-cy="product-info-title" className="product-info-title">{productvalues.title}</h2>
-        <p data-cy="product-info-price" className="product-info-price">
-          {`$${productvalues.price} USD`}
-        </p>
-        <form onSubmit={handleSubmit}>
-          <p>Quantity</p>
-          <QuantityBtn
-            validateNewQuantity={validateNewQuantity}
-            validateSubtraction={validateSubtraction}
-            validateSum={validateSum}
-            productQuntity={productQuntity}
-            setProductQuntity={setProductQuntity}
-          />
-          <div className="product-view-add-and-buy-btns">
-            <Button id="add-to-cart-btn">Add to cart</Button>
-            <Button appearance="primary" id="buy-product-btn">Buy it now</Button>
-          </div>
-        </form>
-        <p data-cy="product-info-description" className="product-info-description">{productvalues.description}</p>
-        <CollapseBtns productDetails={productvalues} />
+        <div className="product-info-wrapper">
+          <h2 data-cy="product-info-title" className="product-info-title">{productvalues.title}</h2>
+          <p data-cy="product-info-price" className="product-info-price">
+            {`$${productvalues.price} USD`}
+          </p>
+          <form onSubmit={handleSubmit}>
+            <p>Quantity</p>
+            <QuantityBtn
+              validateNewQuantity={validateNewQuantity}
+              validateSubtraction={validateSubtraction}
+              validateSum={validateSum}
+              productQuntity={productQuntity}
+              setProductQuntity={setProductQuntity}
+            />
+            <div className="product-view-add-and-buy-btns">
+              <Button id="add-to-cart-btn">Add to cart</Button>
+              <Button appearance="primary" id="buy-product-btn">Buy it now</Button>
+            </div>
+          </form>
+          <p data-cy="product-info-description" className="product-info-description">{productvalues.description}</p>
+          <CollapseBtns productDetails={productvalues} />
+        </div>
       </div>
     </div>
   );

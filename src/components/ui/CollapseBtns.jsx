@@ -57,10 +57,13 @@ const CollapseBtns = ({
 );
 
 CollapseBtns.propTypes = {
-  productDetails: PropTypes.objectOf(PropTypes.shape({
-    rate: PropTypes.string,
-    count: PropTypes.number,
-  })).isRequired,
+  productDetails: PropTypes.shape({
+    category: PropTypes.string,
+    rating: PropTypes.shape({
+      rate: PropTypes.number,
+      count: PropTypes.number,
+    }),
+  }).isRequired,
 };
 
 export default CollapseBtns;
