@@ -7,7 +7,7 @@ import {
 import LogInForm from './containers/users/LogInForm';
 import HomePage from './containers/HomePage';
 import ProductsView from './containers/ProductsView';
-import NavBar from './components/ui/NavBar';
+import NavBar from './components/ui/navbar/NavBar';
 import './App.css';
 import SignUpForm from './containers/users/SignUpForm';
 
@@ -23,7 +23,7 @@ const App = () => (
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path="/products">
+          <Route exact path="/products/:id">
             <ProductsView />
           </Route>
           <Route path="/login">
