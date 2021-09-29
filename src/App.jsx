@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import LogInForm from './containers/users/LogInForm';
 import HomePage from './containers/HomePage';
-import ProductsView from './containers/ProductsView';
+import ProductView from './containers/ProductView';
 import NavBar from './components/ui/navbar/NavBar';
 import './App.css';
 import SignUpForm from './containers/users/SignUpForm';
@@ -24,7 +24,7 @@ const App = () => (
             <HomePage />
           </Route>
           <Route exact path="/products/:id">
-            <ProductsView />
+            <ProductView />
           </Route>
           <Route path="/login">
             <LogInForm />

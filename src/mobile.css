@@ -1,5 +1,5 @@
 
- @media only screen and (min-width: 200px) and (max-width: 999px)  {
+ @media only screen and (max-width: 999px)  {
 
   .container {
     margin: 0 20px;
@@ -93,7 +93,7 @@
   }
 
   .product-view-element img {
-    height: 220px;
+    height: 180px;
   }
 
   .product-view-content p {

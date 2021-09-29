@@ -5,26 +5,14 @@ import QuantityBtn from './QuantityBtn';
 import CollapseBtns from './CollapseBtns';
 
 const ProductDetails = ({
-  productvalues,
+  productValues,
 }) => {
-  const [productQuntity, setProductQuntity] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   const onlyPositive = /[1-9]\d?/;
 
-  const validateNewQuantity = (prev) => {
+  const validateInputValue = (prev) => {
     if (onlyPositive.test(prev.target.value) || prev.target.value === '') {
-      setProductQuntity(prev.target.value);
-    }
-  };
-
-  const validateSubtraction = () => {
-    if (productQuntity > 1) {
-      setProductQuntity(productQuntity - 1);
-    }
-  };
-
-  const validateSum = () => {
-    if (productQuntity >= 0) {
-      setProductQuntity(productQuntity - 1 + 2);
+      setProductQuantity(prev.target.value);
     }
   };
 
@@ -36,31 +24,29 @@ const ProductDetails = ({
     <div className="product-view-container">
       <div className="product-img-container">
         <div className="product-img-wrapper">
-          <img data-cy="product-image" alt="product-img" src={productvalues.image} />
+          <img data-cy="product-image" alt="product-img" src={productValues.image} />
         </div>
       </div>
       <div className="product-info-container">
         <div className="product-info-wrapper">
-          <h2 data-cy="product-info-title" className="product-info-title">{productvalues.title}</h2>
+          <h2 data-cy="product-info-title" className="product-info-title">{productValues.title}</h2>
           <p data-cy="product-info-price" className="product-info-price">
-            {`$${productvalues.price} USD`}
+            {`$${productValues.price} USD`}
           </p>
           <form onSubmit={handleSubmit}>
             <p>Quantity</p>
             <QuantityBtn
-              validateNewQuantity={validateNewQuantity}
-              validateSubtraction={validateSubtraction}
-              validateSum={validateSum}
-              productQuntity={productQuntity}
-              setProductQuntity={setProductQuntity}
+              validateInputValue={validateInputValue}
+              productQuantity={productQuantity}
+              setProductQuantity={setProductQuantity}
             />
             <div className="product-view-add-and-buy-btns">
               <Button id="add-to-cart-btn">Add to cart</Button>
               <Button appearance="primary" id="buy-product-btn">Buy it now</Button>
             </div>
           </form>
-          <p data-cy="product-info-description" className="product-info-description">{productvalues.description}</p>
-          <CollapseBtns productDetails={productvalues} />
+          <p data-cy="product-info-description" className="product-info-description">{productValues.description}</p>
+          <CollapseBtns productDetails={productValues} />
         </div>
       </div>
     </div>
@@ -68,13 +54,16 @@ const ProductDetails = ({
 };
 
 ProductDetails.propTypes = {
-  productvalues: PropTypes.shape({
+  productValues: PropTypes.shape({
     title: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
     category: PropTypes.string,
     image: PropTypes.string,
-    rating: PropTypes.objectOf(PropTypes.number).isRequired,
+    rating: PropTypes.shape({
+      rate: PropTypes.number,
+      count: PropTypes.number,
+    }).isRequired,
   }).isRequired,
 };
 

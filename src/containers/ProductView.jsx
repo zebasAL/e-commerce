@@ -4,12 +4,12 @@ import { useParams } from 'react-router-dom';
 import { toaster, Spinner } from 'evergreen-ui/';
 import ProductDetails from '../components/ui/ProductDetails';
 
-const ProductsView = () => {
+const ProductView = () => {
   const [product, setProduct] = useState({}); // [{}, () => {}]
   const [loaded, setLoaded] = useState(false);
   const { id } = useParams(); // { category: 'jewelry', id: 1}
 
-  const getProductid = () => {
+  const getProduct = () => {
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then((response) => {
         setProduct(response.data);
@@ -22,16 +22,16 @@ const ProductsView = () => {
 
   useEffect(() => {
     // component is mounted if dependencies are empty
-    getProductid();
+    getProduct();
   }, []);
 
   if (loaded === false) return <div style={{ display: 'table', margin: '10px auto' }}><Spinner /></div>;
 
   return (
     <div>
-      <ProductDetails productvalues={product} />
+      <ProductDetails productValues={product} />
     </div>
   );
 };
 
-export default ProductsView;
+export default ProductView;

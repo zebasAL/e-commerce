@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import { Button, TextInput } from 'evergreen-ui';
 
 const QuantityBtn = ({
-  productQuntity,
-  validateSubtraction,
-  validateSum,
-  validateNewQuantity,
+  productQuantity,
+  validateInputValue,
+  setProductQuantity,
 }) => (
   <div className="quantity-btn">
-    <Button data-cy="substract-quantity-btn" onClick={validateSubtraction} borderRadius="0" borderRight="none">-</Button>
+    <Button data-cy="substract-quantity-btn" onClick={() => (productQuantity > 1) && setProductQuantity(productQuantity - 1)} borderRadius="0" borderRight="none">-</Button>
     <TextInput
       id="quantity-btn"
       type="number"
-      value={productQuntity}
-      onChange={validateNewQuantity}
+      value={productQuantity}
+      onChange={validateInputValue}
       borderRadius="1"
       borderLeft="none"
       borderRight="none"
@@ -24,15 +23,14 @@ const QuantityBtn = ({
       alignContent="center"
       paddingX={5}
     />
-    <Button data-cy="sum-quantity-btn" onClick={validateSum} borderRadius="0" borderLeft="none">+</Button>
+    <Button data-cy="sum-quantity-btn" onClick={() => (productQuantity >= 0) && setProductQuantity(productQuantity - 1 + 2)} borderRadius="0" borderLeft="none">+</Button>
   </div>
 );
 
 QuantityBtn.propTypes = {
-  productQuntity: PropTypes.number.isRequired,
-  validateSubtraction: PropTypes.func.isRequired,
-  validateSum: PropTypes.func.isRequired,
-  validateNewQuantity: PropTypes.func.isRequired,
+  productQuantity: PropTypes.number.isRequired,
+  validateInputValue: PropTypes.func.isRequired,
+  setProductQuantity: PropTypes.func.isRequired,
 };
 
 export default QuantityBtn;
