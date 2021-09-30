@@ -52,6 +52,52 @@ body {
   margin: 0 5px;
 }
 
+.autocomplete-container {
+  width: 150px;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.autocomplete-container input:focus {
+  box-shadow: 0 0 0 1px #d6e0ff;
+  border-color: none;
+}
+
+.autocomplete-wrapper {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  background-color: #fdfdfd;
+  margin-top: 7px;
+  box-shadow: .5px 3px 7px rgb(94 95 98 / 62%);
+}
+
+.autocomplete-wrapper a {
+  border-top: .5px solid rgb(145 145 145 / 18%);;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 12px;
+}
+
+.autocomplete-wrapper a.product-options:hover, 
+.autocomplete-wrapper a.product-options:focus {
+  border: none;
+  box-shadow: none;
+  border-top: .5px solid rgb(145 145 145 / 18%);;
+}
+
+.autocomplete-wrapper a.product-options:active {
+  border-left: 3px solid #3366FF;
+  padding-left: 9px;
+}
+
 /* Homepage */
 .headline span, .headline p {
   margin: 40px;

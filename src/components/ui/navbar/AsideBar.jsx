@@ -5,8 +5,16 @@ import {
 } from 'evergreen-ui';
 import NavBarCategoriesBtns from './NavBarCategoriesBtns';
 import LoginAndCartBtns from './LoginAndCartBtns';
+import AutoCompleteField from './AutoCompleteField';
 
-function AsideBar({ categoryValues }) {
+function AsideBar({
+  categoryValues,
+  products,
+  handleClickOutside,
+  setDisplay,
+  display,
+  wrapperRef,
+}) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -27,6 +35,13 @@ function AsideBar({ categoryValues }) {
             <Heading className="aside-navbar-header" size={600}>MENU</Heading>
           </Pane>
           <Tablist display="flex" flexDirection="column" flex="1" padding={8}>
+            <AutoCompleteField
+              products={products}
+              setDisplay={setDisplay}
+              display={display}
+              wrapperRef={wrapperRef}
+              handleClickOutside={handleClickOutside}
+            />
             <LoginAndCartBtns display="flex" flexDirection="column" />
             <NavBarCategoriesBtns categoryValues={categoryValues} display="flex" flexDirection="column" flex="1" />
           </Tablist>
@@ -40,7 +55,26 @@ function AsideBar({ categoryValues }) {
 }
 
 AsideBar.propTypes = {
+  wrapperRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]).isRequired,
+  handleClickOutside: PropTypes.func.isRequired,
+  setDisplay: PropTypes.func.isRequired,
+  display: PropTypes.bool.isRequired,
   categoryValues: PropTypes.arrayOf(PropTypes.string).isRequired,
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string,
+    category: PropTypes.string,
+    image: PropTypes.string.isRequired,
+  })),
+};
+
+AsideBar.defaultProps = {
+  products: [],
 };
 
 export default AsideBar;
