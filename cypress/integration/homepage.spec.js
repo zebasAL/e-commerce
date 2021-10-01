@@ -8,7 +8,7 @@ describe('This will try every switch path elements', () => {
     cy.get('[data-cy="homepage-subheadline"]').should('be.visible');
 
     cy.get('[data-cy="product-price"]').should('be.visible');
-    cy.get('[data-cy="product-image"]').should('be.visible');
+    cy.get('[data-cy="product-image-5"]').should('be.visible');
 
     cy.get('#product-view-1').click();
     cy.get('#navbar-logo').click();
