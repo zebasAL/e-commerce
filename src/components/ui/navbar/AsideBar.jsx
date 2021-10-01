@@ -7,14 +7,14 @@ import NavBarCategoriesBtns from './NavBarCategoriesBtns';
 import LoginAndCartBtns from './LoginAndCartBtns';
 import AutoCompleteField from './AutoCompleteField';
 
-function AsideBar({
+const AsideBar = ({
   categoryValues,
   products,
   handleClickOutside,
   setDisplay,
   display,
   wrapperRef,
-}) {
+}) => {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -52,7 +52,7 @@ function AsideBar({
       </Button>
     </div>
   );
-}
+};
 
 AsideBar.propTypes = {
   wrapperRef: PropTypes.oneOfType([
