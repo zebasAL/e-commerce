@@ -346,3 +346,37 @@ p.product-info-price {
 .collapsible-details div p {
   padding-left: 15px;
 }
+
+/* CATEGORY VIEW */
+.category-view-container {
+  display: flex;
+  justify-content: space-between;
+  color: #393939;
+  font-size: 15px;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.category-filter, .category-sort {
+  display: flex;
+  align-items: baseline;
+}
+
+.category-view-container input, .category-view-container button {
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+}
+
+.category-view-container input::placeholder {
+  color: #393939;
+}
+
+.category-view-container input:focus {
+  box-shadow: none !important;
+  font-weight: 600;
+}
+
+.category-view-container input:hover, .category-view-container button:hover {
+  background-color: transparent !important;
+}

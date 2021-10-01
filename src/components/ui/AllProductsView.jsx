@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -12,7 +11,7 @@ const AllProductsView = ({
       <div key={`${product.id}`} className="product-view-element">
         <div className="image-wrapper">
           <Link id={`product-view-${product.id}`} to={`/products/${product.id}`}>
-            <img data-cy="product-image" alt="Product Image" src={product.image} />
+            <img data-cy={`product-image-${product.id}`} alt="Product" src={product.image} />
           </Link>
         </div>
         <div className="product-view-content">

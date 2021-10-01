@@ -10,6 +10,7 @@ import ProductView from './containers/ProductView';
 import NavBar from './components/ui/navbar/NavBar';
 import './App.css';
 import SignUpForm from './containers/users/SignUpForm';
+import CategoryView from './components/ui/CategoryView';
 
 const App = () => (
   <Router>
@@ -25,6 +26,12 @@ const App = () => (
           </Route>
           <Route exact path="/products/:id">
             <ProductView />
+          </Route>
+          <Route exact path="/products">
+            <CategoryView />
+          </Route>
+          <Route exact path="/category/:category">
+            <CategoryView />
           </Route>
           <Route path="/login">
             <LogInForm />

@@ -12,8 +12,9 @@ const NavBarCategoriesBtns = ({ categoryValues }) => (
             categoryValues.map((category) => (
               <Button
                 key={category}
+                data-cy={`${category}`}
                 is={Link}
-                to={`/categories/${category}`}
+                to={`/category/${category}`}
                 appearance="minimal"
               >
                 {category}
@@ -24,8 +25,9 @@ const NavBarCategoriesBtns = ({ categoryValues }) => (
       {
             categoryValues.length !== 0 && (
               <Button
+                data-cy="see-all"
                 is={Link}
-                to="/categories/"
+                to="/products"
                 appearance="minimal"
               >
                 see all
