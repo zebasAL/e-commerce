@@ -7,7 +7,7 @@ const HomePage = () => {
   const [productList, setProductList] = useState([]);
 
   const getProducts = () => {
-    axios.get('https://fakestoreapi.com/products')
+    axios.get('https://fakestoreapi.com/products?limit=20')
       .then((res) => {
         setProductList(res.data);
       })
