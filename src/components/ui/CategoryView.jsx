@@ -44,7 +44,6 @@ const CategoryView = () => {
   }, [category]);
 
   if (loaded === false) return <div style={{ display: 'table', margin: '10px auto' }}><Spinner /></div>;
-  console.log(productsList.length);
 
   return (
     <>

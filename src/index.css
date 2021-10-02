@@ -99,7 +99,6 @@ ul {
 
 .product-view-container {
   display: flex;
-  margin: auto;
   flex-wrap: wrap;
 }
 
@@ -241,9 +240,12 @@ input::-webkit-inner-spin-button {
 }
 
 /* product-view */
+.product-details-container {
+  margin: 50px 20px;
+}
+
 .product-view-container {
   display: flex;
-  margin: 50px 60px;
   align-items: flex-start;
 }
 

@@ -29,7 +29,7 @@ const ProductView = () => {
   if (loaded === false) return <div style={{ display: 'table', margin: '10px auto' }}><Spinner /></div>;
 
   return (
-    <div>
+    <div className="product-details-container">
       <ProductDetails productValues={product} />
     </div>
   );
