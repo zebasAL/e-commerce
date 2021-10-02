@@ -10,6 +10,7 @@ const ProductView = () => {
   const { id } = useParams(); // { category: 'jewelry', id: 1}
 
   const getProduct = () => {
+    setLoaded(false);
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then((response) => {
         setProduct(response.data);
@@ -23,7 +24,7 @@ const ProductView = () => {
   useEffect(() => {
     // component is mounted if dependencies are empty
     getProduct();
-  }, []);
+  }, [id]);
 
   if (loaded === false) return <div style={{ display: 'table', margin: '10px auto' }}><Spinner /></div>;
 

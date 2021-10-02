@@ -9,5 +9,6 @@ describe('Login spec', () => {
     cy.get('input[type="text"]').type('acer');
     cy.get('.autocomplete-wrapper li').click();
     cy.get('input[type="text"]').should('be.visible', '');
+    cy.get('[data-cy="product-info-title"]').should('be.visible', 'acer');
   });
 });
