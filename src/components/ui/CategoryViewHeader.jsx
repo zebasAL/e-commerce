@@ -64,6 +64,7 @@ const CategoryViewHeader = ({
 CategoryViewHeader.propTypes = {
   category: PropTypes.string,
   productsList: PropTypes.arrayOf(PropTypes.shape({
+    category: PropTypes.string,
     id: PropTypes.number,
     image: PropTypes.string,
     title: PropTypes.string,
@@ -73,6 +74,10 @@ CategoryViewHeader.propTypes = {
   sortDate: PropTypes.string.isRequired,
   filterPrice: PropTypes.string.isRequired,
   setFilterPrice: PropTypes.func.isRequired,
+};
+
+CategoryViewHeader.defaultProps = {
+  category: '',
 };
 
 CategoryViewHeader.defaultProps = {

@@ -103,7 +103,7 @@ const ProductDetails = ({
     <div className="product-view-container">
       <div className="product-img-container">
         <div className="product-img-wrapper">
-          <img data-cy="product-image" alt="product-img" src={productValues.image} />
+          <img data-cy={`product-image-${productValues.id}`} alt="product-img" src={productValues.image} />
         </div>
       </div>
       <div className="product-info-container">
@@ -133,6 +133,7 @@ const ProductDetails = ({
 
 ProductDetails.propTypes = {
   productValues: PropTypes.shape({
+    id: PropTypes.number,
     title: PropTypes.string,
     id: PropTypes.number.isRequired,
     price: PropTypes.number,

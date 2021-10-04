@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Paragraph, Text } from 'evergreen-ui';
 import AllProductsView from './AllProductsView';
 
-const HomePageHeader = ({ products }) => (
+const HomePageHeader = ({ products, loaded }) => (
   <div>
     <div className="headline">
       <Text
@@ -37,7 +37,7 @@ const HomePageHeader = ({ products }) => (
         improve people&lsquo;s lives in small but mighty ways.
       </Paragraph>
     </div>
-    <AllProductsView productsList={products} />
+    <AllProductsView productsList={products} loaded={loaded} />
   </div>
 );
 
@@ -50,6 +50,11 @@ HomePageHeader.propTypes = {
     category: PropTypes.string,
     image: PropTypes.string.isRequired,
   })).isRequired,
+  loaded: PropTypes.bool,
+};
+
+HomePageHeader.defaultProps = {
+  loaded: false,
 };
 
 export default HomePageHeader;
