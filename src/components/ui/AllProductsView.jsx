@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const AllProductsView = ({
   productsList,
 }) => (
-
   <div className="product-view-container">
     {productsList.map((product) => (
       <div key={`${product.id}`} className="product-view-element">

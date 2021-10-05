@@ -364,6 +364,10 @@ p.product-info-price {
   align-items: baseline;
 }
 
+.category-sort button {
+  margin-right: 10px;
+}
+
 .category-view-container input, .category-view-container button {
   background: transparent;
   border: 0;
@@ -377,6 +381,10 @@ p.product-info-price {
 .category-view-container input:focus {
   box-shadow: none !important;
   font-weight: 600;
+}
+
+.category-view-container button {
+  border: 1px solid #8f95b2;
 }
 
 .category-view-container input:hover, .category-view-container button:hover {
