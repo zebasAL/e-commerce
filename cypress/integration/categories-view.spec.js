@@ -31,20 +31,20 @@ describe('categories products', () => {
     cy.get('[data-cy="jewelery"]').click();
     cy.get('[data-cy="category-view-headline"]').should('be.visible');
     // try changing filter from cheaper to expensive
-    cy.get('[data-cy="category-select-filter"]').click();
-    cy.get('#downshift-2-item-0').click();
+    cy.get('[data-cy="category-select-filter"] button').click();
+    cy.get('#downshift-4-item-0').click();
     cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Cheaper');
     cy.get('[data-cy="category-view-headline"]').click();
     cy.get('[data-cy="category-select-filter"] button').click();
-    cy.get('#downshift-2-item-1').click();
+    cy.get('#downshift-4-item-1').click();
     cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Expensive');
     // try changing sort from descending to ascending
-    cy.get('[data-cy="category-select-sort"]').click();
-    cy.get('#downshift-3-item-0').click();
+    cy.get('[data-cy="category-select-sort"] button').click();
+    cy.get('#downshift-5-item-0').click();
     cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Descending');
     cy.get('[data-cy="category-view-headline"]').click();
     cy.get('[data-cy="category-select-sort"] button').click();
-    cy.get('#downshift-3-item-1').click();
+    cy.get('#downshift-5-item-1').click();
     cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Ascending');
     // try clicking a product
     cy.get('[data-cy="product-image-8"]').click();
@@ -54,20 +54,20 @@ describe('categories products', () => {
     cy.get('[data-cy="see-all"]').click();
     cy.get('[data-cy="category-view-headline"]').should('be.visible');
     // try changing filter from cheaper to expensive
-    cy.get('[data-cy="category-select-filter"]').click();
-    cy.get('#downshift-4-item-0').click();
+    cy.get('[data-cy="category-select-filter"] button').click();
+    cy.get('#downshift-8-item-0').click();
     cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Cheaper');
     cy.get('[data-cy="category-view-headline"]').click();
     cy.get('[data-cy="category-select-filter"] button').click();
-    cy.get('#downshift-4-item-1').click();
+    cy.get('#downshift-8-item-1').click();
     cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Expensive');
     // try changing sort from descending to ascending
-    cy.get('[data-cy="category-select-sort"]').click();
-    cy.get('#downshift-5-item-0').click();
+    cy.get('[data-cy="category-select-sort"] button').click();
+    cy.get('#downshift-9-item-0').click();
     cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Descending');
     cy.get('[data-cy="category-view-headline"]').click();
     cy.get('[data-cy="category-select-sort"] button').click();
-    cy.get('#downshift-5-item-1').click();
+    cy.get('#downshift-9-item-1').click();
     cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Ascending');
     // try clicking a product
     cy.get('[data-cy="product-image-19"]').click();

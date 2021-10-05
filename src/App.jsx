@@ -10,7 +10,7 @@ import ProductView from './containers/ProductView';
 import NavBar from './components/ui/navbar/NavBar';
 import './App.css';
 import SignUpForm from './containers/users/SignUpForm';
-import CategoryView from './components/ui/CategoryView';
+import CategoryView from './containers/CategoryView';
 
 const App = () => (
   <Router>
