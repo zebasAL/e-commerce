@@ -91,29 +91,6 @@ describe('Login spec', () => {
     cy.get('[data-cy="category-view-headline"]').should('be.visible');
     // try changing filter from cheaper to expensive
     cy.get('[data-cy="category-select-filter"]').click();
-    cy.get('#downshift-2-item-0').click();
-    cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Cheaper');
-    cy.get('[data-cy="category-view-headline"]').click();
-    cy.get('[data-cy="category-select-filter"] button').click();
-    cy.get('#downshift-2-item-1').click();
-    cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Expensive');
-    // try changing sort from descending to ascending
-    cy.get('[data-cy="category-select-sort"]').click();
-    cy.get('#downshift-3-item-0').click();
-    cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Descending');
-    cy.get('[data-cy="category-view-headline"]').click();
-    cy.get('[data-cy="category-select-sort"] button').click();
-    cy.get('#downshift-3-item-1').click();
-    cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Ascending');
-    // try clicking a product
-    cy.get('[data-cy="product-image-8"]').click();
-    cy.get('#navbar-logo').click();
-
-    // go  to see all category
-    cy.get('[data-cy="see-all"]').click();
-    cy.get('[data-cy="category-view-headline"]').should('be.visible');
-    // try changing filter from cheaper to expensive
-    cy.get('[data-cy="category-select-filter"]').click();
     cy.get('#downshift-4-item-0').click();
     cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Cheaper');
     cy.get('[data-cy="category-view-headline"]').click();
@@ -127,6 +104,29 @@ describe('Login spec', () => {
     cy.get('[data-cy="category-view-headline"]').click();
     cy.get('[data-cy="category-select-sort"] button').click();
     cy.get('#downshift-5-item-1').click();
+    cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Ascending');
+    // try clicking a product
+    cy.get('[data-cy="product-image-8"]').click();
+    cy.get('#navbar-logo').click();
+
+    // go  to see all category
+    cy.get('[data-cy="see-all"]').click();
+    cy.get('[data-cy="category-view-headline"]').should('be.visible');
+    // try changing filter from cheaper to expensive
+    cy.get('[data-cy="category-select-filter"]').click();
+    cy.get('#downshift-8-item-0').click();
+    cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Cheaper');
+    cy.get('[data-cy="category-view-headline"]').click();
+    cy.get('[data-cy="category-select-filter"] button').click();
+    cy.get('#downshift-8-item-1').click();
+    cy.get('[data-cy="category-select-filter"]').should('be.visible', 'Expensive');
+    // try changing sort from descending to ascending
+    cy.get('[data-cy="category-select-sort"]').click();
+    cy.get('#downshift-9-item-0').click();
+    cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Descending');
+    cy.get('[data-cy="category-view-headline"]').click();
+    cy.get('[data-cy="category-select-sort"] button').click();
+    cy.get('#downshift-9-item-1').click();
     cy.get('[data-cy="category-select-sort"]').should('be.visible', 'Ascending');
 
     // add product to shopping cart
@@ -232,9 +232,9 @@ describe('Login spec', () => {
     cy.get('input#quantity-btn8').should('be.visible', 23);
 
     // delete all products from shopping cart
-    cy.get('[data-cy="delete-button-8-14"]').click();
+    cy.get('[data-cy="delete-button-1-14"]').click();
     cy.get('div h4').should('be.visible', 'Product deleted');
-    cy.get('[data-cy="delete-button-8-8"]').click();
+    cy.get('[data-cy="delete-button-1-8"]').click();
     cy.get('div h4').should('be.visible', 'Cart deleted');
     cy.get('[data-cy="message-no-products"]').should('be.visible', 'You have not added any product yet');
     cy.get('.css-yrjgl1').click();
