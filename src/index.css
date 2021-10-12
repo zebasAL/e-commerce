@@ -151,10 +151,6 @@ ul {
   flex-direction: column;
 }
 
-.user-login-options button {
-  width: 100px;
-}
-
 .aside-navbar {
   display: none;
 }
