@@ -14,6 +14,5 @@ describe('Login spec', () => {
     cy.get('#password-login-validation').type(user.password);
 
     cy.get('[type="submit"]').click();
-    cy.get('.css-1sugtjn').should('be.visible');
   });
 });

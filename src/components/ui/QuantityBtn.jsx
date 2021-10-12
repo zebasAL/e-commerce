@@ -4,21 +4,23 @@ import { Button, TextInput } from 'evergreen-ui';
 
 const QuantityBtn = ({
   productQuantity,
-  validateInputValue,
   setProductQuantity,
+  inputId,
 }) => (
   <div className="quantity-btn">
     <Button data-cy="substract-quantity-btn" onClick={() => (productQuantity > 1) && setProductQuantity(productQuantity - 1)} borderRadius="0" borderRight="none">-</Button>
     <TextInput
-      id="quantity-btn"
+      id={`quantity-btn${inputId}`}
       type="number"
       value={productQuantity}
-      onChange={validateInputValue}
+      required
+      onChange={(e) => setProductQuantity(parseInt(e.target.value, 10) || productQuantity)}
       borderRadius="1"
       borderLeft="none"
       borderRight="none"
       borderColor="#c1c4d6"
       width={50}
+      min="0"
       display="flex"
       alignContent="center"
       paddingX={5}
@@ -26,11 +28,14 @@ const QuantityBtn = ({
     <Button data-cy="sum-quantity-btn" onClick={() => (productQuantity >= 0) && setProductQuantity(productQuantity - 1 + 2)} borderRadius="0" borderLeft="none">+</Button>
   </div>
 );
-
 QuantityBtn.propTypes = {
   productQuantity: PropTypes.number.isRequired,
-  validateInputValue: PropTypes.func.isRequired,
   setProductQuantity: PropTypes.func.isRequired,
+  inputId: PropTypes.string,
+};
+
+QuantityBtn.defaultProps = {
+  inputId: '',
 };
 
 export default QuantityBtn;
