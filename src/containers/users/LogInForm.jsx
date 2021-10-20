@@ -22,6 +22,13 @@ const LogInForm = () => {
       });
   };
 
+  const setLocalStorageId = () => {
+    if (users.length) {
+      const [retrievedUser] = users.filter((item) => item.username === userValue.username);
+      localStorage.setItem('id', retrievedUser?.id);
+    }
+  };
+
   const handleAuthentication = () => {
     setIsLoading(true);
     axios.post('https://fakestoreapi.com/auth/login', {
@@ -31,14 +38,10 @@ const LogInForm = () => {
       .then((res) => {
         toaster.success('you logged in');
 
-        if (users.length) {
-          const [retrievedUser] = users.filter((item) => item.username === userValue.username);
-          localStorage.setItem('id', retrievedUser.id);
-        }
-
         setIsLoading(false);
         localStorage.setItem('token', res.data.token);
         history.push('/');
+        window.location.reload(false);
       })
       .catch(() => {
         toaster.notify('we could not find that user');
@@ -55,6 +58,10 @@ const LogInForm = () => {
   useEffect(() => {
     getUsers();
   }, []);
+
+  useEffect(() => {
+    setLocalStorageId();
+  }, [getUsers]);
 
   return (
     <div className="login-container">

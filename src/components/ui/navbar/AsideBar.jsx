@@ -14,6 +14,7 @@ const AsideBar = ({
   setDisplay,
   display,
   wrapperRef,
+  loaded,
 }) => {
   const [isShown, setIsShown] = useState(false);
 
@@ -42,7 +43,7 @@ const AsideBar = ({
               wrapperRef={wrapperRef}
               handleClickOutside={handleClickOutside}
             />
-            <LoginAndCartBtns display="flex" flexDirection="column" />
+            <LoginAndCartBtns loaded={loaded} display="flex" flexDirection="column" />
             <NavBarCategoriesBtns categoryValues={categoryValues} display="flex" flexDirection="column" flex="1" />
           </Tablist>
         </Pane>
@@ -71,10 +72,12 @@ AsideBar.propTypes = {
     category: PropTypes.string,
     image: PropTypes.string.isRequired,
   })),
+  loaded: PropTypes.bool,
 };
 
 AsideBar.defaultProps = {
   products: [],
+  loaded: true,
 };
 
 export default AsideBar;
