@@ -131,6 +131,7 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 5px 5px;
+  text-align: center;
 }
 
 .product-view-text {
