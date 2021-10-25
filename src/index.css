@@ -219,12 +219,11 @@ ul {
 }
 
 /* quantity Button */
-.quantity-container {
+.quantity-wrapper {
   display: flex;
-  margin: 5px 0 15px 0;
 }
 
-.quantity-container input {
+.quantity-wrapper input {
   text-align: center;
   color: black;
 }
@@ -455,11 +454,15 @@ p.product-info-price {
   justify-content: center;
 }
 
-.quantity-container {
+.cart-products-container .quantity-wrapper {
   display: flex;
-  margin: auto 10px;
+  align-items: center;
 }
 
-.quantity-container .quantity-btn {
-  margin: auto 10px;
+.cart-products-container .quantity-wrapper p {
+  margin: 0 10px 0 0;
+}
+
+.payment-button{
+  text-align: center;
 }

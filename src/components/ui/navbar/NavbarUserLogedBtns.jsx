@@ -3,7 +3,7 @@ import {
   Popover, Pane, Button, Icon, UserIcon, toaster,
 } from 'evergreen-ui/';
 import PropTypes from 'prop-types';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import CartView from '../CartView';
 
 const NavbarUserLogedBtns = ({
@@ -18,6 +18,10 @@ const NavbarUserLogedBtns = ({
     toaster.notify('you have signed out');
   };
 
+  const handleAlert = () => {
+    toaster.warning('This service is not available, please try again later');
+  };
+
   return (
     <div>
       <Popover
@@ -26,13 +30,13 @@ const NavbarUserLogedBtns = ({
             paddingX={0}
           >
             <div className="user-login-options">
-              <Button id="my-account-btn" is={Link} to="/myaccount">My Account</Button>
+              <Button id="my-account-btn" onClick={handleAlert}>My Account</Button>
               <Button id="logout-btn" onClick={handleLogOut}>Log out</Button>
             </div>
           </Pane>
         )}
       >
-        <Button id="user-myaccount-btn">
+        <Button id="user-myaccount-btn" type="button">
           <Icon id="user-login-label" icon={UserIcon} size={25} />
         </Button>
       </Popover>
