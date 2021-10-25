@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useState,
+  useState,
 } from 'react';
 import { SearchInput, Button } from 'evergreen-ui';
 import {
@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 
 const AutoCompleteField = ({
   products,
-  handleClickOutside,
   setDisplay,
   display,
   wrapperRef,
@@ -18,10 +17,6 @@ const AutoCompleteField = ({
 
   const getFilteredProducts = () => products.filter((product) => product.title.toLowerCase()
     .includes(value.toLowerCase()));
-
-  useEffect(() => {
-    handleClickOutside();
-  }, []);
 
   return (
     <div ref={wrapperRef} className="autocomplete-container">
@@ -65,7 +60,6 @@ AutoCompleteField.propTypes = {
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
-  handleClickOutside: PropTypes.func.isRequired,
   setDisplay: PropTypes.func.isRequired,
   display: PropTypes.bool.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape({

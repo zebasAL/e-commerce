@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useEffect, useState, useRef,
 } from 'react';
@@ -117,13 +118,13 @@ const NavBar = ({
     }
   };
 
-  const handleClickOutside = () => {
+  const handleClickOutside = React.useCallback(() => {
     document.addEventListener('mousedown', isClickedOutside);
     return () => {
       // Unmounted - cleanup
       document.removeEventListener('mousedown', isClickedOutside);
     };
-  };
+  }, []);
 
   return (
     <>
