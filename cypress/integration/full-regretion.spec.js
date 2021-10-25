@@ -44,7 +44,7 @@ describe('Login spec', () => {
 
     cy.get('#product-view-3').click();
 
-    cy.get('[data-cy="product-image"]').should('be.visible');
+    cy.get('[data-cy="product-image-3"]').should('be.visible');
     cy.get('[data-cy="product-info-title"]').should('be.visible');
     cy.get('[data-cy="product-info-price"]').should('be.visible');
     cy.get('[data-cy="product-info-description"]').should('be.visible');
@@ -232,9 +232,9 @@ describe('Login spec', () => {
     cy.get('input#quantity-btn8').should('be.visible', 23);
 
     // delete all products from shopping cart
-    cy.get('[data-cy="delete-button-1-14"]').click();
+    cy.get('[data-cy="delete-button-11-14"]').click();
     cy.get('div h4').should('be.visible', 'Product deleted');
-    cy.get('[data-cy="delete-button-1-8"]').click();
+    cy.get('[data-cy="delete-button-11-8"]').click();
     cy.get('div h4').should('be.visible', 'Cart deleted');
     cy.get('[data-cy="message-no-products"]').should('be.visible', 'You have not added any product yet');
     cy.get('.css-yrjgl1').click();
