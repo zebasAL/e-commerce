@@ -10,9 +10,9 @@ describe('This will try every switch path elements', () => {
     cy.get('[data-cy="product-price"]').should('be.visible');
     cy.get('[data-cy="product-image-5"]').should('be.visible');
 
-    cy.get('#product-view-3').click();
+    cy.get('#product-view-5').click();
 
-    cy.get('[data-cy="product-image"]').should('be.visible');
+    cy.get('[data-cy="product-image-5"]').should('be.visible');
     cy.get('[data-cy="product-info-title"]').should('be.visible');
     cy.get('[data-cy="product-info-price"]').should('be.visible');
     cy.get('[data-cy="product-info-description"]').should('be.visible');
@@ -28,6 +28,9 @@ describe('This will try every switch path elements', () => {
     cy.get('.materials-collapsible').click();
     cy.get('.dimensions-collapsible').click();
     cy.get('.instructions-collapsible').click();
+    cy.get('[data-cy="similar-product-image-8"]').click();
+    cy.get('[ data-cy="product-image-8"]').should('be.visible');
+    cy.get('.similar-products-header').should('be.visible');
 
     cy.get('#navbar-logo').click();
   });

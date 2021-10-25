@@ -7,7 +7,7 @@ const QuantityBtn = ({
   setProductQuantity,
   inputId,
 }) => (
-  <div className="quantity-btn">
+  <div className="quantity-wrapper">
     <Button data-cy="substract-quantity-btn" onClick={() => (productQuantity > 1) && setProductQuantity(productQuantity - 1)} borderRadius="0" borderRight="none">-</Button>
     <TextInput
       id={`quantity-btn${inputId}`}

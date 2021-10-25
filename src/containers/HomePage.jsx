@@ -5,10 +5,12 @@ import HomePageHeader from '../components/ui/HomepageHeader';
 
 const HomePage = () => {
   const [productList, setProductList] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   const getProducts = () => {
     axios.get('https://fakestoreapi.com/products?limit=20')
       .then((res) => {
+        setLoaded(true);
         setProductList(res.data);
       })
       .catch(() => {
@@ -22,7 +24,7 @@ const HomePage = () => {
 
   return (
     <>
-      <HomePageHeader products={productList} />
+      <HomePageHeader products={productList} loaded={loaded} />
     </>
   );
 };
