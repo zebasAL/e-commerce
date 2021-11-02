@@ -226,6 +226,8 @@ ul {
 .quantity-wrapper input {
   text-align: center;
   color: black;
+  border-radius: 0;
+  padding: 0;
 }
 
 input::-webkit-inner-spin-button {
